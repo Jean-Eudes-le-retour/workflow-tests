@@ -1,0 +1,24 @@
+# run the evaluation of a robot controller and store the result in the participants.json file
+
+name: Run Evaluation
+
+on:
+  repository_dispatch:
+  workflow_dispatch:
+
+jobs:
+  evaluation:
+    name: Evaluation Requested by a Participant
+    runs-on: self-hosted
+    # runs-on: ubuntu-20.04
+    steps:
+      - name: Record Animation and Update Performance
+        id: webots_test
+        uses: cyberbotics/competition-record-action@main
+        with:
+          participant-repo-id: ${{ env.PARTICIPANT_REPO_ID }}
+          participant-repo-name: ${{ github.event.client_payload.repository }}
+          participant-repo-private: ${{ env.PARTICIPANT_REPO_PRIVATE }}
+          log-url: ${{ env.LOG_URL }}
+          repo-token: ${{ secrets.REPO_TOKEN }}
+          allow-push: true
