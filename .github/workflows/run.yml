@@ -11,7 +11,15 @@ jobs:
     name: Evaluation Requested by a Participant
     runs-on: ubuntu-20.04
     steps:
-      - name: Record Animation and Update Performance
+      - name: Set some dud environment variables
+        run: |
+          echo "PARTICIPANT-REPO-ID=dud1" >> $GITHUB_ENV
+          echo "PARTICIPANT-REPO-NAME=dud2" >> $GITHUB_ENV
+          echo "PARTICIPANT-REPO-PRIVATE=dud3" >> $GITHUB_ENV
+          echo "LOG-URL=dud4" >> $GITHUB_ENV
+          echo "REPO-TOKEN=dud5" >> $GITHUB_ENV
+          echo "ALLOW-PUSH=dud6" >> $GITHUB_ENV
+      - name: Print env
         id: webots_test
         uses: cyberbotics/competition-record-action@enhancement-separate-inputs
         with:
