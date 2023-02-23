@@ -9,8 +9,7 @@ on:
 jobs:
   evaluation:
     name: Evaluation Requested by a Participant
-    runs-on: self-hosted
-    # runs-on: ubuntu-20.04
+    runs-on: ubuntu-20.04
     steps:
       - name: Record Animation and Update Performance
         id: webots_test
