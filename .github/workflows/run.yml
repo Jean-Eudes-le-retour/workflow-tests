@@ -15,9 +15,9 @@ jobs:
         id: webots_test
         uses: cyberbotics/competition-record-action@enhancement-separate-inputs
         with:
-          participant-repo-id: ${{ env.PARTICIPANT_REPO_ID }}
-          participant-repo-name: ${{ github.event.client_payload.repository }}
-          participant-repo-private: ${{ env.PARTICIPANT_REPO_PRIVATE }}
-          log-url: ${{ env.LOG_URL }}
-          repo-token: ${{ secrets.REPO_TOKEN }}
+          participant-repo-id: 12341234
+          participant-repo-name: testest
+          participant-repo-private: true
+          log-url: https://zombo.com
+          repo-token: 43214312
           allow-push: true
