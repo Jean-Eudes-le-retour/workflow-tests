@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Record Animation and Update Performance
         id: webots_test
-        uses: cyberbotics/competition-record-action@main
+        uses: cyberbotics/competition-record-action@enhancement-separate-inputs
         with:
           participant-repo-id: ${{ env.PARTICIPANT_REPO_ID }}
           participant-repo-name: ${{ github.event.client_payload.repository }}
